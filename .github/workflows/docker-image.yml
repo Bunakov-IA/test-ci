@@ -32,19 +32,6 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_LOGIN_ID }}/test-cicd:1.0
-      
-      - name: Start Docker Container to remote host
-        uses: littleboyfury/ssh-docker-run@v1.0.0
-        with:
-          deploy_token: ${{secrets.SSHKEY}}
-          server_host: ${{secrets.HOST}}
-          docker_host: ${{secrets.HOST}}
-          docker_username: ${{secrets.DOCKER_USERNAME}}
-          docker_password: ${{secrets.DOCKER_PASSWORD}}
-          docker_namespace: ${{secrets.DOCKER_LOGIN_ID}}
-          docker_repo: ${{secrets.REPO}}
-          image_tag: '1.0'
-          container_port: '7000:80'
          
          
           
