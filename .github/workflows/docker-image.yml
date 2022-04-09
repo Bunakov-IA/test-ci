@@ -40,7 +40,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSHKEY }}
           port: ${{ secrets.PORT }}
-          script: ls -la /
+          script: |
+            docker pull  ${{ secrets.DOCKER_LOGIN_ID }}/test-cicd:1.0
+            docker run -d ${{ secrets.DOCKER_LOGIN_ID }}/test-cicd:1.0
           
 
 
