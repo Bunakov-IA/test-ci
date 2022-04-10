@@ -32,10 +32,10 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_LOGIN_ID }}/test-cicd:1.0
-    
-    deploy_apps_in_vps:
-      name: Deploy docker apps in vps server
-      needs: push_to_docker_hub_registry
+
+  deploy_apps_in_vps:
+    name: Deploy docker apps in vps server
+    needs: push_to_docker_hub_registry
       
       steps:
       - name: executing remote ssh commands using ssh key
