@@ -35,9 +35,10 @@ jobs:
 
   deploy_apps_in_vps:
     name: Deploy docker apps in vps server
+    runs-on: ubuntu-latest
     needs: push_to_docker_hub_registry
       
-      steps:
+    steps:
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
         with:
